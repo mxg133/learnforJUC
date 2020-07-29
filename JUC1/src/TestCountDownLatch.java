@@ -6,12 +6,12 @@ import java.util.concurrent.CountDownLatch;
 public class TestCountDownLatch {
 
 	public static void main(String[] args) {
-		final CountDownLatch latch = new CountDownLatch(50);
+		final CountDownLatch latch = new CountDownLatch(5);
 		LatchDemo ld = new LatchDemo(latch);
 
 		long start = System.currentTimeMillis();
 
-		for (int i = 0; i < 50; i++) {
+		for (int i = 0; i < 5; i++) {
 			new Thread(ld).start();
 		}
 
@@ -39,10 +39,8 @@ class LatchDemo implements Runnable {
 	public void run() {
 
 		try {
-			for (int i = 0; i < 50000; i++) {
-				if (i % 2 == 0) {
+			for (int i = 0; i < 10; i++) {
 					System.out.println(i);
-				}
 			}
 		} finally {
 			latch.countDown();
