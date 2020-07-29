@@ -1,6 +1,6 @@
 import java.util.concurrent.atomic.AtomicInteger;
 
-/*
+/**
  * 一、i++ 的原子性问题：i++ 的操作实际上分为三个步骤“读-改-写”
  * 		  int i = 10;
  * 		  i = i++; //10
