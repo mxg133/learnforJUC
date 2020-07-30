@@ -6,9 +6,9 @@ package my;
  */
 public class TestProductorAndConsumer {
     public static void main(String[] args) {
-        Cleck cleck = new Cleck();
-        Productor productor = new Productor(cleck);
-        Comsumer comsumer = new Comsumer(cleck);
+        Check cleck = new Check();
+        Predictor productor = new Predictor(cleck);
+        Commuter comsumer = new Commuter(cleck);
 
         new Thread(productor, "生产者A").start();
         new Thread(comsumer, "消费者B").start();
@@ -50,9 +50,9 @@ class Cleck{//店员
 }
 //生产者
 class Productor implements Runnable{
-    private Cleck cleck;
+    private Check cleck;
 
-    public Productor(Cleck cleck) {
+    public Productor(Check cleck) {
         this.cleck = cleck;
     }
 
@@ -71,9 +71,9 @@ class Productor implements Runnable{
 }
 //消费者
 class Comsumer implements Runnable{
-    private Cleck cleck;
+    private Check cleck;
 
-    public Comsumer(Cleck cleck) {
+    public Comsumer(Check cleck) {
         this.cleck = cleck;
     }
 
